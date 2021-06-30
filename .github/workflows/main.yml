@@ -40,11 +40,11 @@ jobs:
           DOCKER_REGISTRY_URL: ${{secrets.DOCKER_REGISTRY_URL}}
         run: | 
           docker build -t qed42_nodejs .
-          docker tag qed42_nodejs:latest $DOCKER_REGISTRY_URL/qed42_nodejs:$(date +%s)-arm
+          docker tag qed42_nodejs:latest $DOCKER_REGISTRY_URL/qed42_nodejs:${{env.GITHUB_SHA}}
       
       # Push image
       - name: Push docker image
         env:
           DOCKER_REGISTRY_URL: ${{secrets.DOCKER_REGISTRY_URL}}
-        run: docker push $DOCKER_REGISTRY_URL/qed42_nodejs
+        run: docker push $DOCKER_REGISTRY_URL/qed42_nodejs:${{env.GITHUB_SHA}}
       

@@ -25,7 +25,7 @@
         "cron": "^1.3.0",
         "dotenv": "^4.0.0",
         "ejs": "^2.6.1",
-        "express": "4.16.2",
+        "express": "4.19.2",
         "express-custom-responses": "^1.0.0",
         "express-winston": "^2.5.1",
         "helmet": "3.9.0",
